@@ -50,7 +50,6 @@ function highLight(){
     for(let i=0 ; i<secNumber ; i++){
         if(sections[i].getBoundingClientRect().top >= 0 && sections[i].getBoundingClientRect().top <= 400){
             sections[i].classList.add('your-active-class');
-            sections[i].id
             document.querySelector(`[href = "#${sections[i].id}"]`).classList.add('high_light');
         }else{
             sections[i].classList.remove('your-active-class');
@@ -69,7 +68,7 @@ function highLight(){
 document.addEventListener("DOMContentLoaded",buildNavMenu)
 
 // Scroll to anchor ID using scrollTO event
-ul.addEventListener('click',function(event){
+ul.addEventListener('click',function(event){ //Using event delegation
     event.preventDefault();
     const id = event.target.getAttribute('href').substr(1);
     document.querySelector(`#${id}`).scrollIntoView({behavior: "smooth" , block: "center"});
